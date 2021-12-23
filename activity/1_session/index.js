@@ -18,3 +18,21 @@ for (count = 1; count <= 100; count++) {
 
 // Ejercicio 6
 
+let formatter = {
+  prefix: 'Hello',
+  append: function (str = '') {
+    console.log(`${this.prefix} ${str}`);
+  },
+};
+
+formatter.append('World');
+
+Object.defineProperty(formatter, 'toLowerString', {
+  value: function (str = '') {
+    console.log(str.toLowerCase());
+  },
+});
+
+Object.keys(formatter);
+
+formatter.toLowerString('I’m Lucas');

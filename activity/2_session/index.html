@@ -94,8 +94,8 @@ let logbad = new Login(“pepe”, “bad”) // alert -&gt; <span class="hljs-k
 
                     <h2 id="arrow">Consola JavaScript</h2>
                     <p class="folder">/activity/2_session/index.js</p>
-                    <button class="custom-button" id="loginSuccess">Login</button>
-                    <button class="custom-button button-cancel" id="loginFailure">Error</button>
+                    <button class="custom-button" id="loginSuccess" onclick="new Login('admin', 'passwd')">Login</button>
+                    <button class="custom-button button-cancel" id="loginFailure" onclick="new Login('pepe', 'bad')">Error</button>
                     <button class="custom-button" id="loginSuccessAsync">Login Async</button>
                     <button class="custom-button button-cancel" id="loginFailureAsync">Error Async</button>
                     <pre>
@@ -127,7 +127,15 @@ let loginWitUsername = (username, password) => {
         </div>
     </div>
     <script src="../../prism.js"></script>
-    <script src="index.js">
+    <script>
+ class Login {
+  constructor(username, password) {
+    this.username = username;
+    this.password = password;
+    alert(this.#validation() ? "User logged in" : "User or passwd incorrect");
+  }
+  #validation = () => this.username === "admin" && this.password === "passwd";
+}
     </script>
 </body>
 

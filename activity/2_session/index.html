@@ -136,6 +136,33 @@ let loginWitUsername = (username, password) => {
   }
   #validation = () => this.username === "admin" && this.password === "passwd";
 }
+       const loginWitUsername = (username, password) => {
+        return new Promise(function (resolve, rejected) {
+          setTimeout(() => {
+            if (username === "admin" && password === "passwd") {
+              resolve("User logged in");
+            } else {
+              rejected("Error: invalid username or password");
+            }
+          }, 200);
+        });
+      };
+      document
+        .getElementById("loginSuccessAsync")
+        .addEventListener("click", () => {
+          loginWitUsername("admin", "passwd").then(
+            (result) => alert(result),
+            (error) => alert(error)
+          );
+        });
+      document
+        .getElementById("loginFailureAsync")
+        .addEventListener("click", () => {
+          loginWitUsername("pepe", "bad").then(
+            (result) => alert(result),
+            (error) => alert(error)
+          );
+        });    
     </script>
 </body>
 

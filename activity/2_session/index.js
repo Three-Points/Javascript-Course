@@ -10,6 +10,36 @@ const getKeys = (obj) => Object.keys(obj);
 console.log(getKeys(person));
 
 // Ejercicio 2
+//* Global object: {}
+console.log(this);
+
+//* Function scope from server side
+//* Window object from client side
+function myFunction() {
+    console.log(this);
+}
+//? undefined
+console.log(myFunction());
+
+//* Object scope
+const response = {
+    message: 'Hello World',
+    prompt() {
+        console.log(this);
+    }
+}
+//? { message: 'Hello World', prompt: [Function: prompt] }
+response.prompt();
+
+//* Function scope from server side
+const statusCode = {
+    code: 200,
+    prompt: () => {
+        console.log(this);
+    }
+}
+//? {}
+statusCode.prompt();
 
 // Ejercicio 3
 

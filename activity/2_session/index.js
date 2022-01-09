@@ -49,6 +49,17 @@ const reverseMessage = (message) => {
 console.log(reverseMessage("Hola mundo"));
 
 // Ejercicio 4
+class Login {
+    constructor(username, password) {
+        this.username = username;
+        this.password = password;
+        console.log(this.#validation() ? "User logged in" : "User or passwd incorrect");
+    }
+    #validation = () => this.username === "admin" && this.password === "passwd";
+}
+
+const login_success = new Login("admin", "passwd")
+const login_fail = new Login("pepe", "bad")
 
 // Ejercicio 5
 

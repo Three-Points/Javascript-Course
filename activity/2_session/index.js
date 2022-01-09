@@ -42,6 +42,11 @@ const statusCode = {
 statusCode.prompt();
 
 // Ejercicio 3
+const reverseMessage = (message) => {
+    return message.split("").reverse().join("");
+};
+
+console.log(reverseMessage("Hola mundo"));
 
 // Ejercicio 4
 

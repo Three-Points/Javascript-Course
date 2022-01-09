@@ -1,4 +1,13 @@
 // Ejercicio 1
+const person = {
+  name: "Lucas",
+  age: 27,
+  profession: "Developer",
+};
+
+const getKeys = (obj) => Object.keys(obj);
+
+console.log(getKeys(person));
 
 // Ejercicio 2
 
